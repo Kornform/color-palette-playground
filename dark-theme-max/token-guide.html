@@ -139,7 +139,7 @@
         </head>
         <body class="vscode-body vscode-light">
             <h1 id="semantic-color-token-guide">Semantic Color Token Guide</h1>
-<p>This document explains the naming system for our theme's color tokens and how they support both dark and light themes.</p>
+<p>This guide explains our design system's color tokens and how they support both dark and light themes with CSS variables and Tailwind integration.</p>
 <h2 id="why-semantic-color-tokens">Why Semantic Color Tokens?</h2>
 <p>Semantic tokens describe the <em>purpose</em> of a color rather than its visual appearance. This creates a flexible system that:</p>
 <ol>
@@ -147,9 +147,10 @@
 <li><strong>Improves maintainability</strong> by centralizing color values</li>
 <li><strong>Creates consistency</strong> across the UI</li>
 <li><strong>Makes theme switching seamless</strong></li>
+<li><strong>Integrates with Tailwind CSS</strong> for utility-based styling</li>
 </ol>
 <h2 id="base-colors">Base Colors</h2>
-<p>These tokens define the primary surfaces and interactions in the interface:</p>
+<p>These tokens define the primary surfaces and backgrounds:</p>
 <table>
 <thead>
 <tr>
@@ -163,37 +164,37 @@
 <tr>
 <td><code>--color-bg-primary</code></td>
 <td>Main background color</td>
-<td>#1a1a1e</td>
+<td>#18181c</td>
 <td>#f8f9fa</td>
 </tr>
 <tr>
 <td><code>--color-bg-secondary</code></td>
 <td>Card and component backgrounds</td>
-<td>#27272c</td>
+<td>#26262b</td>
 <td>#ffffff</td>
 </tr>
 <tr>
 <td><code>--color-bg-tertiary</code></td>
 <td>Elevated components</td>
-<td>#303038</td>
+<td>#2f2f36</td>
 <td>#f0f0f5</td>
 </tr>
 <tr>
 <td><code>--color-bg-button</code></td>
 <td>Button backgrounds</td>
-<td>#3a3a43</td>
+<td>#3a3a44</td>
 <td>#e9ecef</td>
 </tr>
 <tr>
 <td><code>--color-bg-button-hover</code></td>
 <td>Button hover state</td>
-<td>#45454e</td>
+<td>#474752</td>
 <td>#dee2e6</td>
 </tr>
 <tr>
 <td><code>--color-bg-button-active</code></td>
 <td>Button active state</td>
-<td>#505059</td>
+<td>#52525e</td>
 <td>#ced4da</td>
 </tr>
 </tbody>
@@ -230,8 +231,41 @@
 </tr>
 </tbody>
 </table>
+<h2 id="secondary-button-colors">Secondary Button Colors</h2>
+<p>Colors specifically for secondary button styles:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Dark Theme</th>
+<th>Light Theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-button-secondary</code></td>
+<td>Secondary button</td>
+<td>#c4c4c4</td>
+<td>#6c757d</td>
+</tr>
+<tr>
+<td><code>--color-button-secondary-hover</code></td>
+<td>Secondary btn hover</td>
+<td>#e0e0e0</td>
+<td>#5a6268</td>
+</tr>
+<tr>
+<td><code>--color-button-secondary-active</code></td>
+<td>Secondary btn active</td>
+<td>#e8e8e8</td>
+<td>#495057</td>
+</tr>
+</tbody>
+</table>
 <h2 id="accent-colors">Accent Colors</h2>
-<p>Accent colors remain consistent across themes for brand identity:</p>
+<p>Accent colors with their variants remain consistent across themes for brand identity:</p>
+<h3 id="blue">Blue</h3>
 <table>
 <thead>
 <tr>
@@ -243,22 +277,154 @@
 <tbody>
 <tr>
 <td><code>--color-accent-blue</code></td>
-<td>Primary brand color (Cyan)</td>
-<td>#00ddff</td>
+<td>Default</td>
+<td>#00d4f7</td>
 </tr>
 <tr>
-<td><code>--color-accent-red</code></td>
-<td>Error states, warnings (Coral)</td>
-<td>#ff5a5f</td>
+<td><code>--color-accent-blue-hover</code></td>
+<td>Hover state</td>
+<td>#7ae1f0</td>
 </tr>
 <tr>
-<td><code>--color-accent-purple</code></td>
-<td>Alternative accent (Lavender)</td>
-<td>#ad8df9</td>
+<td><code>--color-accent-blue-active</code></td>
+<td>Active state</td>
+<td>#a2e8eb</td>
+</tr>
+<tr>
+<td><code>--color-accent-blue-subtle</code></td>
+<td>Subtle bg</td>
+<td>rgba(0, 212, 247, 0.1)</td>
 </tr>
 </tbody>
 </table>
-<p>Each accent color also has variants: <code>-hover</code>, <code>-active</code>, and <code>-subtle</code>.</p>
+<h3 id="red">Red</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-accent-red</code></td>
+<td>Default</td>
+<td>#ff5257</td>
+</tr>
+<tr>
+<td><code>--color-accent-red-hover</code></td>
+<td>Hover state</td>
+<td>#ff7f83</td>
+</tr>
+<tr>
+<td><code>--color-accent-red-active</code></td>
+<td>Active state</td>
+<td>#ffacaf</td>
+</tr>
+<tr>
+<td><code>--color-accent-red-subtle</code></td>
+<td>Subtle bg</td>
+<td>rgba(255, 82, 87, 0.1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="purple">Purple</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-accent-purple</code></td>
+<td>Default</td>
+<td>#a179fa</td>
+</tr>
+<tr>
+<td><code>--color-accent-purple-hover</code></td>
+<td>Hover state</td>
+<td>#b293f8</td>
+</tr>
+<tr>
+<td><code>--color-accent-purple-active</code></td>
+<td>Active state</td>
+<td>#cabefc</td>
+</tr>
+<tr>
+<td><code>--color-accent-purple-subtle</code></td>
+<td>Subtle bg</td>
+<td>rgba(161, 121, 250, 0.1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="green">Green</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-accent-green</code></td>
+<td>Default</td>
+<td>#25b667</td>
+</tr>
+<tr>
+<td><code>--color-accent-green-hover</code></td>
+<td>Hover state</td>
+<td>#44cc7f</td>
+</tr>
+<tr>
+<td><code>--color-accent-green-active</code></td>
+<td>Active state</td>
+<td>#6bd294</td>
+</tr>
+<tr>
+<td><code>--color-accent-green-subtle</code></td>
+<td>Subtle bg</td>
+<td>rgba(37, 182, 103, 0.1)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="yellow">Yellow</h3>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-accent-yellow</code></td>
+<td>Default</td>
+<td>#eabb0f</td>
+</tr>
+<tr>
+<td><code>--color-accent-yellow-hover</code></td>
+<td>Hover state</td>
+<td>#ecc734</td>
+</tr>
+<tr>
+<td><code>--color-accent-yellow-active</code></td>
+<td>Active state</td>
+<td>#efc959</td>
+</tr>
+<tr>
+<td><code>--color-accent-yellow-subtle</code></td>
+<td>Subtle bg</td>
+<td>rgba(234, 187, 15, 0.1)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="border-colors">Border Colors</h2>
 <table>
 <thead>
@@ -284,29 +450,80 @@
 </tr>
 </tbody>
 </table>
-<h2 id="how-to-use-these-tokens">How to Use These Tokens</h2>
-<ol>
-<li><strong>Never use hardcoded colors</strong> in your CSS. Always reference a token.</li>
-<li><strong>Select tokens by purpose</strong>, not by visual appearance.</li>
-<li><strong>For one-off components</strong>, create component-specific tokens that reference these base tokens.</li>
-</ol>
-<h2 id="example">Example:</h2>
+<h2 id="shadow-tokens">Shadow Tokens</h2>
+<p>Shadows provide depth and elevation:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Dark Theme</th>
+<th>Light Theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--shadow-small</code></td>
+<td>Subtle shadows</td>
+<td>0 2px 4px rgba(0, 0, 0, 0.2)</td>
+<td>0 2px 4px rgba(0, 0, 0, 0.075)</td>
+</tr>
+<tr>
+<td><code>--shadow-medium</code></td>
+<td>Medium depth</td>
+<td>0 4px 8px rgba(0, 0, 0, 0.3)</td>
+<td>0 4px 8px rgba(0, 0, 0, 0.1)</td>
+</tr>
+<tr>
+<td><code>--shadow-large</code></td>
+<td>High elevation</td>
+<td>0 10px 20px rgba(0, 0, 0, 0.4)</td>
+<td>0 10px 20px rgba(0, 0, 0, 0.15)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-tokens-with-css">Using Tokens with CSS</h2>
+<p>Always reference tokens by their semantic purpose:</p>
 <pre><code class="language-css"><span class="hljs-comment">/* Good - uses semantic tokens */</span>
 <span class="hljs-selector-class">.alert</span> {
   <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--color-bg-secondary);
   <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-built_in">var</span>(--color-accent-red);
   <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--color-text-primary);
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-built_in">var</span>(--shadow-small);
 }
 
 <span class="hljs-comment">/* Bad - hardcoded colors */</span>
 <span class="hljs-selector-class">.alert</span> {
-  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#27272c</span>;
-  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ff5a5f</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#26262b</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ff5257</span>;
   <span class="hljs-attribute">color</span>: white;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">2px</span> <span class="hljs-number">4px</span> <span class="hljs-built_in">rgba</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0.2</span>);
 }
 </code></pre>
-<h2 id="adding-theme-support">Adding Theme Support</h2>
-<p>To implement theme switching, simply add the <code>data-theme</code> attribute to the root element:</p>
+<h2 id="using-tokens-with-tailwind-css">Using Tokens with Tailwind CSS</h2>
+<p>Our design system integrates with Tailwind through the <code>tailwind.config.js</code>:</p>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- With CSS variables --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bg-bg-secondary text-text-primary border border-accent-red shadow-sm&quot;</span>&gt;</span>Alert content<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Using accent colors --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bg-accent-blue hover:bg-accent-blue-hover text-bg-primary&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>The Tailwind configuration maps our tokens to convenient utility classes:</p>
+<pre><code class="language-js"><span class="hljs-comment">// Example mapping in tailwind.config.js</span>
+<span class="hljs-attr">colors</span>: {
+  <span class="hljs-string">&#x27;bg-primary&#x27;</span>: <span class="hljs-string">&#x27;var(--color-bg-primary)&#x27;</span>,
+  <span class="hljs-string">&#x27;bg-secondary&#x27;</span>: <span class="hljs-string">&#x27;var(--color-bg-secondary)&#x27;</span>,
+  <span class="hljs-string">&#x27;text-primary&#x27;</span>: <span class="hljs-string">&#x27;var(--color-text-primary)&#x27;</span>,
+  <span class="hljs-comment">// ... more mappings</span>
+  <span class="hljs-attr">accent</span>: {
+    <span class="hljs-attr">blue</span>: <span class="hljs-string">&#x27;var(--color-accent-blue)&#x27;</span>,
+    <span class="hljs-string">&#x27;blue-hover&#x27;</span>: <span class="hljs-string">&#x27;var(--color-accent-blue-hover)&#x27;</span>,
+    <span class="hljs-comment">// ... more accent colors</span>
+  }
+}
+</code></pre>
+<h2 id="theme-switching">Theme Switching</h2>
+<p>To implement theme switching, add the <code>data-theme</code> attribute to the root element:</p>
 <pre><code class="language-html"><span class="hljs-comment">&lt;!-- Dark theme (default) --&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-comment">&lt;!-- content --&gt;</span>
@@ -317,7 +534,22 @@
   <span class="hljs-comment">&lt;!-- content --&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p>The CSS will automatically apply the appropriate color values based on the theme attribute.</p>
+<p>JavaScript for theme toggling:</p>
+<pre><code class="language-js"><span class="hljs-comment">// Toggle between dark and light themes</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;theme-toggle&quot;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">const</span> html = <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>;
+  <span class="hljs-keyword">const</span> currentTheme = html.<span class="hljs-title function_">getAttribute</span>(<span class="hljs-string">&quot;data-theme&quot;</span>);
+  html.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&quot;data-theme&quot;</span>, currentTheme === <span class="hljs-string">&quot;light&quot;</span> ? <span class="hljs-string">&quot;&quot;</span> : <span class="hljs-string">&quot;light&quot;</span>);
+});
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<ol>
+<li><strong>Always use semantic tokens</strong> instead of hardcoded colors</li>
+<li><strong>Select tokens by purpose</strong>, not by visual appearance</li>
+<li><strong>For component-specific needs</strong>, create local tokens that reference the global tokens</li>
+<li><strong>Use Tailwind's utilities</strong> when possible for consistency</li>
+<li><strong>Test both themes</strong> regularly during development</li>
+</ol>
 
             
             
