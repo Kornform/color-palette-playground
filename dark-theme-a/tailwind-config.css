@@ -1,0 +1,79 @@
+/* 
+ * Semantic Color System
+ * Dark theme is default (:root) and Light theme is toggled via .light-mode class 
+ */
+
+:root {
+  /* Base Colors - Dark Theme (Default) */
+  --color-bg-primary: #1a1a1e;
+  --color-bg-secondary: #27272c;
+  --color-bg-tertiary: #303038;
+  --color-bg-button: #3a3a43;
+  --color-bg-button-hover: #45454e;
+  --color-bg-button-active: #505059;
+
+  /* Accent Colors */
+  --color-accent-blue: #00ddff;
+  --color-accent-blue-hover: #80ebff;
+  --color-accent-blue-active: #aaf2ff;
+  --color-accent-blue-subtle: rgba(0, 221, 255, 0.1);
+
+  --color-accent-red: #ff5a5f;
+  --color-accent-red-hover: #ff8a8e;
+  --color-accent-red-active: #ffb5b8;
+  --color-accent-red-subtle: rgba(255, 90, 95, 0.1);
+
+  --color-accent-purple: #ad8df9;
+  --color-accent-purple-hover: #c5b0fa;
+  --color-accent-purple-active: #d9ccfc;
+  --color-accent-purple-subtle: rgba(173, 141, 249, 0.1);
+
+  /* Text Colors - Dark Theme */
+  --color-text-primary: rgba(255, 255, 255, 0.9);
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-text-disabled: rgba(255, 255, 255, 0.4);
+
+  /* Secondary Button Color - Dark Theme */
+  --color-button-secondary: #c4c4c4;
+  --color-button-secondary-hover: #d8d8d8;
+  --color-button-secondary-active: #e0e0e0;
+
+  /* Borders - Dark Theme */
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border-medium: rgba(255, 255, 255, 0.2);
+
+  /* Shadows - Dark Theme */
+  --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Theme - Applied when .light-mode class is added to html or body */
+.light-mode {
+  /* Base Colors - Light Theme */
+  --color-bg-primary: #f8f9fa;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f0f0f5;
+  --color-bg-button: #e9ecef;
+  --color-bg-button-hover: #dee2e6;
+  --color-bg-button-active: #ced4da;
+
+  /* Text Colors - Light Theme */
+  --color-text-primary: rgba(33, 37, 41, 0.95);
+  --color-text-secondary: rgba(33, 37, 41, 0.75);
+  --color-text-disabled: rgba(33, 37, 41, 0.4);
+
+  /* Secondary Button Color - Light Theme */
+  --color-button-secondary: #6c757d;
+  --color-button-secondary-hover: #5a6268;
+  --color-button-secondary-active: #495057;
+
+  /* Borders - Light Theme */
+  --color-border-light: rgba(0, 0, 0, 0.1);
+  --color-border-medium: rgba(0, 0, 0, 0.2);
+
+  /* Shadows - Light Theme */
+  --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.075);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Note: Accent colors remain the same for both themes */
+}

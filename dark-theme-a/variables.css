@@ -1,0 +1,113 @@
+/* ========================================
+   VARIABLES.CSS
+   Enthält ausschließlich Farb- und
+   Schattenvariablen für Dark/Light Theme.
+   ========================================
+*/
+
+/* Dark Theme (Default) */
+:root {
+  /* =====================================
+       Base Colors - Dark Theme (Default)
+       ===================================== */
+  --color-bg-primary: #18181c;
+  --color-bg-secondary: #26262b;
+  --color-bg-tertiary: #2f2f36;
+
+  /* Primary Button-Farben mit stärkerem Hover/Active */
+  --color-bg-button: #3a3a44;
+  --color-bg-button-hover: #474752;
+  --color-bg-button-active: #52525e;
+
+  /* =====================================
+       Accent Colors (Optimiert)
+       ===================================== */
+  --color-accent-blue: #00d4f7;
+  --color-accent-blue-hover: #7ae1f0;
+  --color-accent-blue-active: #a2e8eb;
+  --color-accent-blue-subtle: rgba(0, 212, 247, 0.1);
+
+  --color-accent-red: #ff5257;
+  --color-accent-red-hover: #ff7f83;
+  --color-accent-red-active: #ffacaf;
+  --color-accent-red-subtle: rgba(255, 82, 87, 0.1);
+
+  --color-accent-purple: #a179fa;
+  --color-accent-purple-hover: #b293f8;
+  --color-accent-purple-active: #cabefc;
+  --color-accent-purple-subtle: rgba(161, 121, 250, 0.1);
+
+  /* Neu: Green & Yellow */
+  --color-accent-green: #25b667;
+  --color-accent-green-hover: #44cc7f;
+  --color-accent-green-active: #6bd294;
+  --color-accent-green-subtle: rgba(37, 182, 103, 0.1);
+
+  --color-accent-yellow: #eabb0f;
+  --color-accent-yellow-hover: #ecc734;
+  --color-accent-yellow-active: #efc959;
+  --color-accent-yellow-subtle: rgba(234, 187, 15, 0.1);
+
+  /* =====================================
+       Text Colors - Dark Theme
+       ===================================== */
+  --color-text-primary: rgba(255, 255, 255, 0.9);
+  --color-text-secondary: rgba(255, 255, 255, 0.7);
+  --color-text-disabled: rgba(255, 255, 255, 0.4);
+
+  /* =====================================
+       Secondary Button Color - Dark Theme
+       (mit verstärktem Hover/Active)
+       ===================================== */
+  --color-button-secondary: #c4c4c4;
+  --color-button-secondary-hover: #e0e0e0;
+  --color-button-secondary-active: #e8e8e8;
+
+  /* =====================================
+       Borders & Shadows - Dark Theme
+       ===================================== */
+  --color-border-light: rgba(255, 255, 255, 0.1);
+  --color-border-medium: rgba(255, 255, 255, 0.2);
+
+  --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Theme - wird angewendet, wenn data-theme="light" am <html> gesetzt ist */
+[data-theme="light"] {
+  /* =====================================
+       Base Colors - Light Theme
+       ===================================== */
+  --color-bg-primary: #f8f9fa;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f0f0f5;
+
+  --color-bg-button: #e9ecef;
+  --color-bg-button-hover: #dee2e6;
+  --color-bg-button-active: #ced4da;
+
+  /* =====================================
+       Text Colors - Light Theme
+       ===================================== */
+  --color-text-primary: rgba(33, 37, 41, 0.95);
+  --color-text-secondary: rgba(33, 37, 41, 0.75);
+  --color-text-disabled: rgba(33, 37, 41, 0.4);
+
+  /* =====================================
+       Secondary Button Color - Light Theme
+       ===================================== */
+  --color-button-secondary: #6c757d;
+  --color-button-secondary-hover: #5a6268;
+  --color-button-secondary-active: #495057;
+
+  /* =====================================
+       Borders & Shadows - Light Theme
+       ===================================== */
+  --color-border-light: rgba(0, 0, 0, 0.1);
+  --color-border-medium: rgba(0, 0, 0, 0.2);
+
+  --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.075);
+  --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Hinweis: Accent-Farben bleiben in beiden Themes gleich */
+}

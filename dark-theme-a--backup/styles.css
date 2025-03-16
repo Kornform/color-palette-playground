@@ -1,0 +1,539 @@
+/* ========================================
+   STYLES.CSS
+   Enthält alle Layout- und Komponenten-
+   Styles, die auf die Variablen zugreifen.
+   ========================================
+*/
+
+/* Basislayout (HTML-Elemente, Container etc.) */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 40px;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--shadow-small);
+}
+
+/* =====================================
+   Typography
+   ===================================== */
+h1 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: var(--color-text-primary);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 12px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: var(--color-text-primary);
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: var(--color-text-secondary);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+.link-blue {
+  color: var(--color-accent-blue);
+}
+
+.link-blue:hover {
+  text-decoration: underline;
+}
+
+.link-red {
+  color: var(--color-accent-red);
+}
+
+.link-red:hover {
+  text-decoration: underline;
+}
+
+.link-purple {
+  color: var(--color-accent-purple);
+}
+
+.link-purple:hover {
+  text-decoration: underline;
+}
+
+/* =====================================
+   Color Swatches - Tabelle
+   ===================================== */
+.color-palette {
+  margin-bottom: 24px;
+  background-color: var(--color-bg-primary);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow-small);
+  border: 1px solid var(--color-border-light);
+}
+
+.color-swatch {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-light);
+  height: 40px;
+}
+
+.color-swatch:last-child {
+  border-bottom: none;
+}
+
+.color-preview {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.color-swatch-info {
+  padding: 0 12px;
+  font-family: monospace;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  gap: 32px;
+}
+
+.color-swatch-var {
+  font-weight: bold;
+  color: var(--color-text-primary);
+  flex: 0 1 20%;
+}
+
+.color-hex,
+.color-hsl {
+  color: var(--color-text-secondary);
+}
+
+/* =====================================
+   Background Classes
+   ===================================== */
+.bg-page {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-card {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-card-elevated {
+  background-color: var(--color-bg-tertiary);
+}
+
+.bg-button {
+  background-color: var(--color-bg-button);
+}
+
+.bg-button-hover {
+  background-color: var(--color-bg-button-hover);
+}
+
+.bg-accent-blue {
+  background-color: var(--color-accent-blue);
+}
+
+.bg-accent-red {
+  background-color: var(--color-accent-red);
+}
+
+.bg-accent-purple {
+  background-color: var(--color-accent-purple);
+}
+
+/* Container für Seitenhintergrund-Demos */
+.bg-page-container {
+  background-color: var(--color-bg-primary);
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.bg-page-container h2,
+.bg-page-container h3 {
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 12px;
+}
+
+/* =====================================
+   Buttons
+   ===================================== */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Basis-Button */
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Kleiner Button */
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+/* Monochrome Buttons */
+.btn-primary {
+  background-color: var(--color-bg-button);
+  color: var(--color-text-primary);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-bg-button-hover);
+}
+
+.btn-primary:active {
+  background-color: var(--color-bg-button-active);
+}
+
+/* Secondary Button in Grau */
+.btn-secondary {
+  background-color: var(--color-button-secondary);
+  color: var(--color-bg-primary);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-button-secondary-hover);
+}
+
+.btn-secondary:active {
+  background-color: var(--color-button-secondary-active);
+}
+
+/* Tertiary Button als Outline */
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-light);
+}
+
+.btn-tertiary:hover {
+  border-color: var(--color-border-medium);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.btn-tertiary:active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Text Button */
+.btn-text {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: none;
+  padding: 8px 12px;
+}
+
+.btn-text:hover {
+  color: var(--color-text-primary);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.btn-text:active {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Accent Color Buttons (Dark Background, helle Schrift) */
+.btn-accent-blue {
+  background-color: var(--color-accent-blue);
+  color: var(--color-bg-primary);
+  border: none;
+}
+
+.btn-accent-blue:hover {
+  background-color: var(--color-accent-blue-hover);
+}
+
+.btn-accent-blue:active {
+  background-color: var(--color-accent-blue-active);
+}
+
+.btn-accent-red {
+  background-color: var(--color-accent-red);
+  color: var(--color-bg-primary);
+  border: none;
+}
+
+.btn-accent-red:hover {
+  background-color: var(--color-accent-red-hover);
+}
+
+.btn-accent-red:active {
+  background-color: var(--color-accent-red-active);
+}
+
+.btn-accent-purple {
+  background-color: var(--color-accent-purple);
+  color: var(--color-bg-primary);
+  border: none;
+}
+
+.btn-accent-purple:hover {
+  background-color: var(--color-accent-purple-hover);
+}
+
+.btn-accent-purple:active {
+  background-color: var(--color-accent-purple-active);
+}
+
+/* Neu: Green & Yellow Buttons */
+.btn-accent-green {
+  background-color: var(--color-accent-green);
+  color: var(--color-bg-primary);
+  border: none;
+}
+
+.btn-accent-green:hover {
+  background-color: var(--color-accent-green-hover);
+}
+
+.btn-accent-green:active {
+  background-color: var(--color-accent-green-active);
+}
+
+.btn-accent-yellow {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-bg-primary);
+  border: none;
+}
+
+.btn-accent-yellow:hover {
+  background-color: var(--color-accent-yellow-hover);
+}
+
+.btn-accent-yellow:active {
+  background-color: var(--color-accent-yellow-active);
+}
+
+/* Disabled-Zustand für alle Buttons */
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Icon im Button */
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+/* =====================================
+   Cards
+   ===================================== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--color-bg-secondary);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow-small);
+  border: 1px solid var(--color-border-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.card-elevated {
+  background-color: var(--color-bg-tertiary);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-bordered {
+  border: 1px solid var(--color-border-medium);
+}
+
+/* Accent Cards */
+.card-accent-blue .card-title {
+  color: var(--color-accent-blue);
+}
+
+.card-accent-red .card-title {
+  color: var(--color-accent-red);
+}
+
+.card-accent-purple .card-title {
+  color: var(--color-accent-purple);
+}
+
+.card-accent-green .card-title {
+  color: var(--color-accent-green);
+}
+
+.card-accent-yellow .card-title {
+  color: var(--color-accent-yellow);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.card-content {
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: auto;
+}
+
+/* =====================================
+   Tabellen
+   ===================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--color-bg-button);
+  color: var(--color-text-primary);
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* =====================================
+   Badges
+   ===================================== */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-blue {
+  background-color: var(--color-accent-blue-subtle);
+  color: var(--color-accent-blue);
+}
+
+.badge-red {
+  background-color: var(--color-accent-red-subtle);
+  color: var(--color-accent-red);
+}
+
+.badge-purple {
+  background-color: var(--color-accent-purple-subtle);
+  color: var(--color-accent-purple);
+}
+
+.badge-neutral {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+}
+
+/* Neu: badge-green & badge-yellow */
+.badge-green {
+  background-color: var(--color-accent-green-subtle);
+  color: var(--color-accent-green);
+}
+
+.badge-yellow {
+  background-color: var(--color-accent-yellow-subtle);
+  color: var(--color-accent-yellow);
+}
+
+/* =====================================
+   Forms
+   ===================================== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-text-secondary);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-light);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-primary);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 0 1px var(--color-accent-blue);
+}

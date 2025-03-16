@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Semantic Color Token Guide</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="semantic-color-token-guide">Semantic Color Token Guide</h1>
+<p>This document explains the naming system for our theme's color tokens and how they support both dark and light themes.</p>
+<h2 id="why-semantic-color-tokens">Why Semantic Color Tokens?</h2>
+<p>Semantic tokens describe the <em>purpose</em> of a color rather than its visual appearance. This creates a flexible system that:</p>
+<ol>
+<li><strong>Supports both dark and light themes</strong> with a single set of token names</li>
+<li><strong>Improves maintainability</strong> by centralizing color values</li>
+<li><strong>Creates consistency</strong> across the UI</li>
+<li><strong>Makes theme switching seamless</strong></li>
+</ol>
+<h2 id="base-colors">Base Colors</h2>
+<p>These tokens define the primary surfaces and interactions in the interface:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Dark Theme</th>
+<th>Light Theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-bg-primary</code></td>
+<td>Main background color</td>
+<td>#1a1a1e</td>
+<td>#f8f9fa</td>
+</tr>
+<tr>
+<td><code>--color-bg-secondary</code></td>
+<td>Card and component backgrounds</td>
+<td>#27272c</td>
+<td>#ffffff</td>
+</tr>
+<tr>
+<td><code>--color-bg-tertiary</code></td>
+<td>Elevated components</td>
+<td>#303038</td>
+<td>#f0f0f5</td>
+</tr>
+<tr>
+<td><code>--color-bg-button</code></td>
+<td>Button backgrounds</td>
+<td>#3a3a43</td>
+<td>#e9ecef</td>
+</tr>
+<tr>
+<td><code>--color-bg-button-hover</code></td>
+<td>Button hover state</td>
+<td>#45454e</td>
+<td>#dee2e6</td>
+</tr>
+<tr>
+<td><code>--color-bg-button-active</code></td>
+<td>Button active state</td>
+<td>#505059</td>
+<td>#ced4da</td>
+</tr>
+</tbody>
+</table>
+<h2 id="text-colors">Text Colors</h2>
+<p>Consistent text colors maintain readability across themes:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Dark Theme</th>
+<th>Light Theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-text-primary</code></td>
+<td>Main text</td>
+<td>rgba(255, 255, 255, 0.9)</td>
+<td>rgba(33, 37, 41, 0.95)</td>
+</tr>
+<tr>
+<td><code>--color-text-secondary</code></td>
+<td>Secondary text</td>
+<td>rgba(255, 255, 255, 0.7)</td>
+<td>rgba(33, 37, 41, 0.75)</td>
+</tr>
+<tr>
+<td><code>--color-text-disabled</code></td>
+<td>Disabled text</td>
+<td>rgba(255, 255, 255, 0.4)</td>
+<td>rgba(33, 37, 41, 0.4)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="accent-colors">Accent Colors</h2>
+<p>Accent colors remain consistent across themes for brand identity:</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-accent-blue</code></td>
+<td>Primary brand color (Cyan)</td>
+<td>#00ddff</td>
+</tr>
+<tr>
+<td><code>--color-accent-red</code></td>
+<td>Error states, warnings (Coral)</td>
+<td>#ff5a5f</td>
+</tr>
+<tr>
+<td><code>--color-accent-purple</code></td>
+<td>Alternative accent (Lavender)</td>
+<td>#ad8df9</td>
+</tr>
+</tbody>
+</table>
+<p>Each accent color also has variants: <code>-hover</code>, <code>-active</code>, and <code>-subtle</code>.</p>
+<h2 id="border-colors">Border Colors</h2>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Purpose</th>
+<th>Dark Theme</th>
+<th>Light Theme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--color-border-light</code></td>
+<td>Subtle separators</td>
+<td>rgba(255, 255, 255, 0.1)</td>
+<td>rgba(0, 0, 0, 0.1)</td>
+</tr>
+<tr>
+<td><code>--color-border-medium</code></td>
+<td>Stronger borders</td>
+<td>rgba(255, 255, 255, 0.2)</td>
+<td>rgba(0, 0, 0, 0.2)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-use-these-tokens">How to Use These Tokens</h2>
+<ol>
+<li><strong>Never use hardcoded colors</strong> in your CSS. Always reference a token.</li>
+<li><strong>Select tokens by purpose</strong>, not by visual appearance.</li>
+<li><strong>For one-off components</strong>, create component-specific tokens that reference these base tokens.</li>
+</ol>
+<h2 id="example">Example:</h2>
+<pre><code class="language-css"><span class="hljs-comment">/* Good - uses semantic tokens */</span>
+<span class="hljs-selector-class">.alert</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--color-bg-secondary);
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-built_in">var</span>(--color-accent-red);
+  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--color-text-primary);
+}
+
+<span class="hljs-comment">/* Bad - hardcoded colors */</span>
+<span class="hljs-selector-class">.alert</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#27272c</span>;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ff5a5f</span>;
+  <span class="hljs-attribute">color</span>: white;
+}
+</code></pre>
+<h2 id="adding-theme-support">Adding Theme Support</h2>
+<p>To implement theme switching, simply add the <code>data-theme</code> attribute to the root element:</p>
+<pre><code class="language-html"><span class="hljs-comment">&lt;!-- Dark theme (default) --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- content --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Light theme --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">data-theme</span>=<span class="hljs-string">&quot;light&quot;</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- content --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>The CSS will automatically apply the appropriate color values based on the theme attribute.</p>
+
+            
+            
+        </body>
+        </html>

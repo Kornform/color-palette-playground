@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Schema Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-bg: #f7f7f7;
+            --secondary-bg: #ebebeb;
+            --primary-text: #222222;
+            --secondary-text: #555555;
+            --border-color: #dddddd;
+            --soft-border: #e5e5e5;
+            --accent-color: #e63946;
+            --button-primary-bg: #444444;
+            --button-primary-text: #ffffff;
+            --button-primary-hover-bg: #222222;
+            --button-secondary-bg: #dddddd;
+            --button-secondary-text: #222222;
+            --button-secondary-hover-bg: #bbbbbb;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-bg: #1a1a1a;
+                --secondary-bg: #2a2a2a;
+                --primary-text: #f5f5f5;
+                --secondary-text: #bbbbbb;
+                --border-color: #3a3a3a;
+                --soft-border: #444444;
+                --button-primary-bg: #f5f5f5;
+                --button-primary-text: #222222;
+                --button-primary-hover-bg: #dddddd;
+                --button-secondary-bg: #444444;
+                --button-secondary-text: #f5f5f5;
+                --button-secondary-hover-bg: #666666;
+            }
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--button-primary-bg);
+            color: var(--button-primary-text);
+            border: 1px solid var(--soft-border);
+        }
+
+        .btn-primary:hover {
+            background: var(--button-primary-hover-bg);
+        }
+
+        .btn-secondary {
+            background: var(--button-secondary-bg);
+            color: var(--button-secondary-text);
+            border: 1px solid var(--soft-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--button-secondary-hover-bg);
+        }
+    </style>
+</head>
+
+<body class="p-8">
+
+    <!-- Color Palette Section -->
+    <div class="container mx-auto max-w-4xl mb-10">
+        <h1 class="text-2xl font-bold text-center mb-4">Color Palette</h1>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="p-6 rounded-lg border" style="background: var(--primary-bg); border-color: var(--soft-border);">
+                <p class="text-sm">Primary</p>
+                <p class="text-xs text-secondary-text">var(--primary-bg)</p>
+            </div>
+            <div class="p-6 rounded-lg border" style="background: var(--secondary-bg); border-color: var(--soft-border);">
+                <p class="text-sm">Secondary</p>
+                <p class="text-xs text-secondary-text">var(--secondary-bg)</p>
+            </div>
+            <div class="p-6 rounded-lg border text-white"
+                style="background: var(--accent-color); border-color: var(--soft-border);">
+                <p class="text-sm">Accent</p>
+                <p class="text-xs">var(--accent-color)</p>
+            </div>
+            <div class="p-6 rounded-lg border" style="background: var(--border-color);">
+                <p class="text-sm">Border</p>
+                <p class="text-xs">var(--border-color)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container mx-auto max-w-4xl px-4">
+        <div class="max-w-lg w-full mx-auto px-6 py-8 rounded-xl border relative overflow-hidden"
+            style="background: var(--secondary-bg); border-color: var(--soft-border);">
+
+            <!-- Profile Section -->
+            <div class="text-center mb-12 relative">
+                <div class="w-36 h-36 mx-auto rounded-full p-[2px]" style="background: var(--primary-text);">
+                    <div class="w-full h-full rounded-full border overflow-hidden" style="border-color: var(--soft-border);">
+                        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <h1 class="text-3xl font-bold mt-6">Lernplattform</h1>
+                <p class="mt-3 max-w-sm mx-auto">
+                    Diese Website ist für dich <span class="font-semibold">Meichen</span>
+                    <span class="inline-block animate-pulse" style="color: var(--accent-color);">♥️</span>
+                </p>
+            </div>
+
+            <!-- Buttons Section -->
+            <div class="mb-10">
+                <h2 class="text-center font-medium uppercase tracking-widest text-sm mb-4">Buttons</h2>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="btn btn-primary">Primary Button</a>
+                    <a href="#" class="btn btn-secondary">Secondary Button</a>
+                </div>
+            </div>
+
+            <!-- Articles Section -->
+            <div class="mb-12">
+                <h2 class="text-center font-medium uppercase tracking-widest text-sm mb-4">Neueste Artikel</h2>
+                <div class="space-y-3">
+                    <div class="block p-4 rounded-lg border hover:bg-gray-200"
+                        style="background: var(--primary-bg); border-color: var(--soft-border);">
+                        <h3 class="text-base font-medium">Artikel 1</h3>
+                        <p class="text-sm mt-1">Kurze Beschreibung dieses Artikels...</p>
+                    </div>
+                    <div class="block p-4 rounded-lg border hover:bg-gray-200"
+                        style="background: var(--primary-bg); border-color: var(--soft-border);">
+                        <h3 class="text-base font-medium">Artikel 2</h3>
+                        <p class="text-sm mt-1">Kurze Beschreibung dieses Artikels...</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

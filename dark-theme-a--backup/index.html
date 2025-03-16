@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Semantic Color Design System</title>
+    <!-- Zuerst die Variablen -->
+    <link rel="stylesheet" href="variables.css" />
+    <!-- Danach die Komponenten-Styles -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Include the theme switcher script as a separate file -->
+    <script src="theme-switcher.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Semantic Color Design System</h1>
+
+        <!-- =====================================
+         1) COLOR PALETTE
+         ===================================== -->
+        <div class="section">
+            <h2>Color Palette</h2>
+            <p>A monochrome base with multiple accent colors.</p>
+
+            <h3>Monochrome Palette</h3>
+            <div class="color-palette">
+                <!-- color-bg-primary -->
+                <div class="color-swatch">
+                    <div class="color-preview bg-page"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-bg-primary</span>
+                        <span class="color-hex">#18181c</span>
+                        <span class="color-hsl">hsl(240, 5%, 10%)</span>
+                    </div>
+                </div>
+                <!-- color-bg-secondary -->
+                <div class="color-swatch">
+                    <div class="color-preview bg-card"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-bg-secondary</span>
+                        <span class="color-hex">#26262b</span>
+                        <span class="color-hsl">hsl(240, 6%, 16%)</span>
+                    </div>
+                </div>
+                <!-- color-bg-tertiary -->
+                <div class="color-swatch">
+                    <div class="color-preview bg-card-elevated"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-bg-tertiary</span>
+                        <span class="color-hex">#2f2f36</span>
+                        <span class="color-hsl">hsl(240, 6%, 20%)</span>
+                    </div>
+                </div>
+                <!-- color-bg-button -->
+                <div class="color-swatch">
+                    <div class="color-preview bg-button"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-bg-button</span>
+                        <span class="color-hex">#3a3a44</span>
+                        <span class="color-hsl">hsl(240, 8%, 24%)</span>
+                    </div>
+                </div>
+                <!-- color-bg-button-hover -->
+                <div class="color-swatch">
+                    <div class="color-preview bg-button-hover"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-bg-button-hover</span>
+                        <span class="color-hex">#474752</span>
+                        <span class="color-hsl">hsl(240, 8%, 29%)</span>
+                    </div>
+                </div>
+                <!-- color-button-secondary -->
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #c4c4c4;"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-button-secondary</span>
+                        <span class="color-hex">#c4c4c4</span>
+                        <span class="color-hsl">hsl(0, 0%, 77%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Accent Colors</h3>
+            <div class="color-palette">
+                <!-- BLUE -->
+                <div class="color-swatch">
+                    <div class="color-preview bg-accent-blue"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-accent-blue</span>
+                        <span class="color-hex">#00d4f7</span>
+                        <span class="color-hsl">hsl(190, 92%, 48%)</span>
+                    </div>
+                </div>
+                <!-- RED -->
+                <div class="color-swatch">
+                    <div class="color-preview bg-accent-red"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-accent-red</span>
+                        <span class="color-hex">#ff5257</span>
+                        <span class="color-hsl">hsl(359, 100%, 65%)</span>
+                    </div>
+                </div>
+                <!-- PURPLE -->
+                <div class="color-swatch">
+                    <div class="color-preview bg-accent-purple"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-accent-purple</span>
+                        <span class="color-hex">#a179fa</span>
+                        <span class="color-hsl">hsl(257, 95%, 73%)</span>
+                    </div>
+                </div>
+                <!-- GREEN -->
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #25b667;"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-accent-green</span>
+                        <span class="color-hex">#25b667</span>
+                        <span class="color-hsl">hsl(144, 66%, 43%)</span>
+                    </div>
+                </div>
+                <!-- YELLOW -->
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: #eabb0f;"></div>
+                    <div class="color-swatch-info">
+                        <span class="color-swatch-var">--color-accent-yellow</span>
+                        <span class="color-hex">#eabb0f</span>
+                        <span class="color-hsl">hsl(47, 89%, 49%)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================
+         2) TYPOGRAPHY
+         ===================================== -->
+        <div class="section">
+            <h2>Typography</h2>
+
+            <h1>Headline 1</h1>
+            <h2>Headline 2</h2>
+            <h3>Headline 3 / Subheadline</h3>
+
+            <p>Paragraph: This is a sample text for a paragraph. It shows how text is displayed in the design system. The color
+                is slightly lighter than the headlines to create a visual hierarchy.</p>
+
+            <p>Another paragraph with
+                <a href="#" class="link-blue">a blue link</a>,
+                <a href="#" class="link-red">a red link</a>, and
+                <a href="#" class="link-purple">a purple link</a>.
+            </p>
+        </div>
+
+        <!-- =====================================
+         3) BUTTONS
+         ===================================== -->
+        <div class="section">
+            <h2>Buttons</h2>
+            <p>Monochrome buttons with optional accent color variants.</p>
+
+            <h3>Monochrome Buttons (on card background)</h3>
+            <div class="button-container">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <button class="btn btn-tertiary">Tertiary Button</button>
+                <button class="btn btn-text">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Text Button
+                </button>
+            </div>
+
+            <h3>Accent Color Buttons</h3>
+            <div class="button-container">
+                <button class="btn btn-accent-blue">Blue Button</button>
+                <button class="btn btn-accent-red">Red Button</button>
+                <button class="btn btn-accent-purple">Purple Button</button>
+                <button class="btn btn-accent-green">Green Button</button>
+                <button class="btn btn-accent-yellow">Yellow Button</button>
+            </div>
+
+            <div class="bg-page-container">
+                <h3>On Page Background</h3>
+                <div class="button-container">
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-tertiary">Tertiary Button</button>
+                </div>
+            </div>
+
+            <h3>Disabled Buttons</h3>
+            <div class="button-container">
+                <button class="btn btn-primary" disabled>Primary Disabled</button>
+                <button class="btn btn-secondary" disabled>Secondary Disabled</button>
+                <button class="btn btn-tertiary" disabled>Tertiary Disabled</button>
+            </div>
+        </div>
+
+        <!-- =====================================
+         4) CARDS (MONOCHROME)
+         ===================================== -->
+        <div class="section">
+            <h2>Cards (Monochrome)</h2>
+            <p>Cards in various monochrome styles.</p>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-title">Standard Card</div>
+                    <div class="card-content">
+                        <p>Standard card with border on the card background.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Cancel</button>
+                        <button class="btn btn-primary">Confirm</button>
+                    </div>
+                </div>
+
+                <div class="card card-elevated">
+                    <div class="card-title">Elevated Card</div>
+                    <div class="card-content">
+                        <p>Card with increased contrast to the background and stronger shadow.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Cancel</button>
+                        <button class="btn btn-primary">Confirm</button>
+                    </div>
+                </div>
+
+                <div class="card card-bordered">
+                    <div class="card-title">Bordered Card</div>
+                    <div class="card-content">
+                        <p>A card with a more prominent border for stronger distinction.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Cancel</button>
+                        <button class="btn btn-primary">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================
+         5) CARDS (ACCENT COLORS)
+         ===================================== -->
+        <div class="section">
+            <h2>Cards (Accent Colors)</h2>
+            <p>Cards with colored titles for emphasis.</p>
+
+            <div class="cards-container">
+                <div class="card card-accent-blue">
+                    <div class="card-title">Blue Accent Card</div>
+                    <div class="card-content">
+                        <p>Card with blue accent title without colored border.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Cancel</button>
+                        <button class="btn btn-accent-blue">Confirm</button>
+                    </div>
+                </div>
+
+                <div class="card card-accent-red">
+                    <div class="card-title">Red Accent Card</div>
+                    <div class="card-content">
+                        <p>Card with red accent title without colored border.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Cancel</button>
+                        <button class="btn btn-accent-red">Confirm</button>
+                    </div>
+                </div>
+
+                <div class="card card-accent-purple">
+                    <div class="card-title">Purple Accent Card</div>
+                    <div class="card-content">
+                        <p>Card with purple accent title without colored border.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Cancel</button>
+                        <button class="btn btn-accent-purple">Confirm</button>
+                    </div>
+                </div>
+
+                <!-- Neue Accent Cards: Green & Yellow -->
+                <div class="card card-accent-green">
+                    <div class="card-title">Green Accent Card</div>
+                    <div class="card-content">
+                        <p>Card with green accent title indicating success or positive state.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Cancel</button>
+                        <button class="btn btn-accent-green">Confirm</button>
+                    </div>
+                </div>
+
+                <div class="card card-accent-yellow">
+                    <div class="card-title">Yellow Accent Card</div>
+                    <div class="card-content">
+                        <p>Card with yellow accent title for warnings or important messages.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Cancel</button>
+                        <button class="btn btn-accent-yellow">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================
+         6) CARDS ON PAGE BACKGROUND
+         ===================================== -->
+        <div class="bg-page-container">
+            <h2>Cards on Page Background</h2>
+            <p>Demonstration of card elements on the main background.</p>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-title">Card on Page Background</div>
+                    <div class="card-content">
+                        <p>Card with standard contrast to the page background.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-tertiary">Details</button>
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+
+                <div class="card card-elevated">
+                    <div class="card-title">Card with Higher Contrast</div>
+                    <div class="card-content">
+                        <p>Increased contrast on the main background.</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="btn btn-text">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Close
+                        </button>
+                        <button class="btn btn-secondary">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =====================================
+         7) TABLE
+         ===================================== -->
+        <div class="section">
+            <h2>Table</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Smith</td>
+                        <td>john@example.com</td>
+                        <td><span class="badge badge-blue">Active</span></td>
+                        <td>
+                            <button class="btn btn-tertiary btn-sm">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Emily Johnson</td>
+                        <td>emily@example.com</td>
+                        <td><span class="badge badge-neutral">Inactive</span></td>
+                        <td>
+                            <button class="btn btn-tertiary btn-sm">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>David Williams</td>
+                        <td>david@example.com</td>
+                        <td><span class="badge badge-purple">Pending</span></td>
+                        <td>
+                            <button class="btn btn-tertiary btn-sm">Edit</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Davis</td>
+                        <td>sarah@example.com</td>
+                        <td><span class="badge badge-red">Important</span></td>
+                        <td>
+                            <button class="btn btn-tertiary btn-sm">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- =====================================
+         8) FORM
+         ===================================== -->
+        <div class="section">
+            <h2>Form</h2>
+
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="John Smith">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="john@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" placeholder="Your message here..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option>Please select</option>
+                        <option>Support</option>
+                        <option>Feedback</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="button-container">
+                    <button type="button" class="btn btn-tertiary">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Theme toggle button will be injected by JavaScript (theme-switcher.js) -->
+</body>
+
+</html>
